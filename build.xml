@@ -100,14 +100,15 @@
  <target name="phpcs"
          description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
   <echo msg="Finding coding standard violations..."/> 
-  <exec executable="phpcs.bat" logoutput="true">
+  <exec executable="phpcs.bat" >
    <arg value="--standard=${project.basedir}/phpcs.xml" />
    <arg path="${project.basedir}/fuel/app" />
   </exec>
  </target>
 
  <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-  <exec executable="phpcs.bat" output="/dev/null">
+  <echo msg="Finding coding standard violations using PHP_CodeSniffer..."/>
+  <exec executable="phpcs.bat" >
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${project.basedir}/build/logs/checkstyle.xml" />
    <arg value="--standard=${project.basedir}/phpcs.xml" />
