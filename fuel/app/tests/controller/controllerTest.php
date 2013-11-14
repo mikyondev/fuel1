@@ -11,5 +11,7 @@ class controllerTest extends \PHPUnit_Framework_TestCase{
         $this->assertEquals(2,1+1);
     }
 
-
+    public function  test2(){
+        $this->assertEquals(2,1-1);
+    }
 }
